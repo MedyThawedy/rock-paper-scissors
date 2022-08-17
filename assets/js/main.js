@@ -33,7 +33,10 @@ let fnCompareChoices = (choice) => {
         varRoundNr = varRoundNr + 1;
 
         // Write the round number on the p element
-        document.getElementById('idRoundNumber').innerHTML = varRoundNr;
+        document.getElementById('idSelectedRoundsNumber').innerHTML = varSelectedRoundsNumber;
+
+        // Write the round number on the p element
+        document.getElementById('idRoundNumber').innerHTML = varRoundNr + ' Rounds ';
 
         console.log('varRoundNr : ' + varRoundNr);
         varChoicePlayer = choice;
@@ -188,7 +191,8 @@ function fnResetTheGame() {
     document.getElementById('idPlayerScore').innerHTML = '';
     document.getElementById('idCompScore').innerHTML = '';
     document.getElementById('idRoundNumber').innerHTML = '';
-    document.getElementById('idPOutput').innerHTML = '';
+    document.getElementById('idPOutput').innerHTML = 'MAKE YOUR MOVE';
+    document.getElementById('idRoundNumber').innerHTML = '';
     console.clear();
 }
 

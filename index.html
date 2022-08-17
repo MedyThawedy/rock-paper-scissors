@@ -6,47 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/fontstyles.css">
+    <link rel="stylesheet" href="./assets/css/googlefonts.css">
+    <title>Rock, Paper, Scissors</title>
 </head>
 
 <body>
 
     <main>
         <article>
-            <div>
-                <h1> Rock Paper Scissors </h1>
-                <label for="">5</label>
-                <input type="radio" name="rbSelectedRoundsNumber" value="5" class="clsSelectedRoundsNumber" id="r5"
-                    onclick="fnSetSelectedRoundsNumber()">
-                <label for="">10</label>
-                <input type="radio" name="rbSelectedRoundsNumber" value="10" class="clsSelectedRoundsNumber" id="r10"
-                    onclick="fnSetSelectedRoundsNumber()">
-                <label for="">15</label>
-                <input type="radio" name="rbSelectedRoundsNumber" value="15" class="clsSelectedRoundsNumber" id="r15"
-                    onclick="fnSetSelectedRoundsNumber()">
-                <label for="">20</label>
-                <input type="radio" name="rbSelectedRoundsNumber" value="20" class="clsSelectedRoundsNumber" id="r20"
-                    onclick="fnSetSelectedRoundsNumber()">
+
+            <h1 class="clsHeader1"> Rock Paper Scissors </h1>
+            <div class="clsQuestionPlusRoundSelectionDiv">
+                <h3 class="clsHowManyRounds">How many rounds?</h3>
+                <div class="clsRoundSelectionDiv">
+
+                    <div>
+                        <input type="radio" name="rbSelectedRoundsNumber" value="5" class="clsSelectedRoundsNumber"
+                            id="r5" onclick="fnSetSelectedRoundsNumber()">&nbsp;&nbsp;&nbsp;<label for="">5</label>
+                    </div>
+                    <div>
+
+                        <input type="radio" name="rbSelectedRoundsNumber" value="10" class="clsSelectedRoundsNumber"
+                            id="r10" onclick="fnSetSelectedRoundsNumber()"> <label for="">10</label>
+                    </div>
+                    <div>
+
+                        <input type="radio" name="rbSelectedRoundsNumber" value="15" class="clsSelectedRoundsNumber"
+                            id="r15" onclick="fnSetSelectedRoundsNumber()"> <label for="">15</label>
+                    </div>
+                    <div>
+
+                        <input type="radio" name="rbSelectedRoundsNumber" value="20" class="clsSelectedRoundsNumber"
+                            id="r20" onclick="fnSetSelectedRoundsNumber()"> <label for="">20</label>
+                    </div>
+                </div>
+
             </div>
 
-            <div>
+            <div class="clsRoundNumber">
                 <h3> Round Number </h3>
                 <p id="idRoundNumber"></p>
                 <p>From</p>
-                <p>Selected rounds number</p>
+                <p id="idSelectedRoundsNumber">Selected rounds number</p>
             </div>
 
-            <h3>Results</h3>
 
-            <div>
-                <p>User</p>
-                <p id="idPlayerScore">0</p>
-                <p>:</p>
-                <p id="idCompScore">0</p>
-                <p>Comp</p>
+
+            <div class="clsResults">
+                <h3>Results</h3>
+                <div class="clsResultsToAlign">
+                    <p>User</p>
+                    <p id="idPlayerScore">0</p>
+                    <p>:</p>
+                    <p id="idCompScore">0</p>
+                    <p>Comp</p>
+                </div>
             </div>
-            <div>
-                <h3>Let s play</h3>
+            <div class="clsLetsPlay">
+                <h3 class="clsLetsPlay">Let s play</h3>
                 <div class="clsChoices">
                     <button id="idRock" class="clsChoice" onclick="fnCompareChoices(this.innerHTML)">Rock</button>
                     <button id="idPaper" class="clsChoice" onclick="fnCompareChoices(this.innerHTML)">Paper</button>
@@ -58,7 +76,7 @@
             </div>
         </article>
     </main>
-    <footer> <button onclick="fnResetTheGame()">Restart</button> </footer>
+    <footer> <button onclick="fnResetTheGame()" class="clsRestart">Restart</button> </footer>
     <script src="./assets/js/main.js"></script>
 </body>
 

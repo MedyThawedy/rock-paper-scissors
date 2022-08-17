@@ -1,0 +1,9 @@
+@font-face {
+    font-family: WorkSans, LarishNeue;
+    src: url(../fonts/Larish\ Neue\ Semibold.woff2);
+}
+
+@font-face {
+    font-family: WorkSans, LarishNeue, Semibold;
+    src: url(../fonts/LarishNeueSemibold.woff);
+}

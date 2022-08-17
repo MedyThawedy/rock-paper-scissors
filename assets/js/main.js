@@ -47,7 +47,12 @@ let fnCompareChoices = (choice) => {
         document.getElementById('idSelectedRoundsNumber').innerHTML = varSelectedRoundsNumber;
 
         // Write the round number on the p element
-        document.getElementById('idRoundNumber').innerHTML = varRoundNr + ' Rounds ';
+        if (varRoundNr === 1) {
+            document.getElementById('idRoundNumber').innerHTML = varRoundNr + ' Round ';
+        } else {
+            document.getElementById('idRoundNumber').innerHTML = varRoundNr + ' Rounds ';
+        }
+
 
         varChoicePlayer = choice;
 

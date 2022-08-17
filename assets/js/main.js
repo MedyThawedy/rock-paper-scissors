@@ -9,10 +9,20 @@ let gameResult = '';
 
 
 const cSelectedRoundsNumber = document.querySelectorAll('input[name="rbSelectedRoundsNumber"]');
-console.log(cSelectedRoundsNumber);
+
 
 //https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/
 let fnSetSelectedRoundsNumber = () => {
+    document.getElementById('idRoundNumber').innerHTML = '';
+    varRoundNr = 0;
+    document.getElementById('idSelectedRoundsNumber').innerHTML = '';
+    document.getElementById('idLetsPlay').style.width = "25%";
+    varSelectedRoundsNumber = 0;
+    document.getElementById('idPlayerScore').innerHTML = '';
+    playerScore = 0;
+    document.getElementById('idCompScore').innerHTML = '';
+    compScore = 0;
+    fnRemoveStyleHeader();
     document.getElementById('idH3LetsPlay').innerHTML = 'Let s play';
     for (const cSelectedRoundNumber of cSelectedRoundsNumber) {
         if (cSelectedRoundNumber.checked) {
@@ -57,15 +67,14 @@ let fnCompareChoices = (choice) => {
                 document.getElementById('idH3LetsPlay').innerHTML =
 
                     '<p>' + 'This round is draw because computer selected the same like player!' + '</p>'
-                    + '<p>' + 'varChoiceComp = ' + varChoiceComp + ' varChoicePlayer = ' + varChoicePlayer + '</p>'
-                    + '<p>' + 'Please select a choice again! ' + '</p>'
+                    + '<p>' + 'Computer chose ' + varChoiceComp + ' and player chose ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score : ' + compScore + ' Player score : ' + playerScore + '</p>';
             } else if ((varChoicePlayer === 'Scissors') && (varChoiceComp === 'Rock')) {
                 compScore = compScore + 1;
 
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' and player chose ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoiceComp + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
 
@@ -74,8 +83,8 @@ let fnCompareChoices = (choice) => {
 
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
-                    + '<p>' + varChoicePlayer + ' beats ' + '</p>'
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' and player chose ' + varChoicePlayer + '</p>'
+                    + '<p>' + varChoicePlayer + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score : ' + compScore + ' Player score : ' + playerScore + '</p>';
 
             } else if ((varChoicePlayer === 'Scissors') && (varChoiceComp === 'Paper')) {
@@ -84,7 +93,7 @@ let fnCompareChoices = (choice) => {
 
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Computer chose : ' + varChoiceComp + ' | Player chose : ' + varChoicePlayer + '</p>'
+                    '<p>' + 'Computer chose : ' + varChoiceComp + ' and player chose : ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoicePlayer + ' beats ' + varChoiceComp + '</p>'
                     + '<p>' + 'Computer score : ' + compScore + ' Player score : ' + playerScore + '</p>';
 
@@ -93,7 +102,7 @@ let fnCompareChoices = (choice) => {
 
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Computer chose : ' + varChoiceComp + ' | Player chose : ' + varChoicePlayer + '</p>'
+                    '<p>' + 'Computer chose : ' + varChoiceComp + ' and player chose : ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoiceComp + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score : ' + compScore + ' Player score : ' + playerScore + '</p>';
 
@@ -102,7 +111,7 @@ let fnCompareChoices = (choice) => {
 
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Computer chose : ' + varChoiceComp + ' | Player chose : ' + varChoicePlayer + '</p>'
+                    '<p>' + 'Computer chose : ' + varChoiceComp + ' and player chose : ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoiceComp + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score : ' + compScore + ' Player score : ' + playerScore + '</p>';
             } else if ((varChoicePlayer === 'Paper') && (varChoiceComp === 'Rock')) {
@@ -119,6 +128,7 @@ let fnCompareChoices = (choice) => {
             document.getElementById('idCompScore').innerHTML = compScore;
 
         } else {
+            fnAddStyleHeader();
             console.log('Game is over!');
             //  alert('Game is over! You can start again! ' + ' Player score :' + playerScore + ' Computer score: ' + compScore);
             if (compScore > playerScore) {
@@ -126,22 +136,20 @@ let fnCompareChoices = (choice) => {
 
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Computer won the game! ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
+                    '<p id="idPH3LetsPlay">' + 'Computer won the game! ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
 
             } else if (compScore < playerScore) {
                 console.log('Player won the game! ' + ' Player score :' + playerScore + ' Computer score : ' + compScore);
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Player won the game! ' + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>';
+                    '<p id="idPH3LetsPlay">' + 'Player won the game! ' + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>';
             } else if (compScore === playerScore) {
                 console.log('Game is a draw');
                 console.log('Computer score : ' + compScore + ' Player score :' + playerScore);
                 // Write the result in the p element 
                 document.getElementById('idH3LetsPlay').innerHTML =
-                    '<p>' + 'Game is a draw ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
+                    '<p id="idPH3LetsPlay">' + 'Game is a draw ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
             }
-
-
             fnResetTheGame();
         }
 
@@ -196,8 +204,20 @@ function fnRestartTheGame() {
 let fnComputerChoice = () => {
     let arrChoices = ['Rock', 'Paper', 'Scissors'];
     varChoiceComp = arrChoices[Math.floor(Math.random() * 3)];
-    console.log('Computer chose = ' + varChoiceComp);
     return varChoiceComp;
+}
+
+function fnAddStyleHeader() {
+    let element = document.getElementById('idH3LetsPlay');
+    element.classList.add('clsHeader1');
+    document.getElementById('idLetsPlay').style.width = "50%";
+    document.getElementById('idPH3LetsPlay').style.color = 'black';
+}
+
+function fnRemoveStyleHeader() {
+    let element = document.getElementById('idH3LetsPlay');
+    element.classList.remove('clsHeader1');
+    //document.getElementById('idPH3LetsPlay').style.color = 'white';
 }
 
 

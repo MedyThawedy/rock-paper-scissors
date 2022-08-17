@@ -27,7 +27,6 @@ let fnSetSelectedRoundsNumber = () => {
     for (const cSelectedRoundNumber of cSelectedRoundsNumber) {
         if (cSelectedRoundNumber.checked) {
             varSelectedRoundsNumber = cSelectedRoundNumber.value;
-
         }
     }
 
@@ -38,7 +37,7 @@ let fnSetSelectedRoundsNumber = () => {
 
 //This function will handle the choice of the player and compare it with the choice of the computer and do the rest!
 let fnCompareChoices = (choice) => {
-
+    fnHideDiv();
     if (varSelectedRoundsNumber > 0) {
 
         document.getElementById('idPOutput').innerHTML = '';
@@ -150,10 +149,12 @@ let fnCompareChoices = (choice) => {
                 document.getElementById('idH3LetsPlay').innerHTML =
                     '<p id="idPH3LetsPlay">' + 'Game is a draw ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
             }
+            fnShowDiv();
             fnResetTheGame();
         }
 
     } else {
+        fnShowDiv();
         alert('Select rounds number to start the game! ');
     }
 
@@ -180,6 +181,7 @@ function fnResetTheGame() {
 }
 
 function fnRestartTheGame() {
+    fnShowDiv();
     varRoundNr = 0;
     compScore = 0;
     playerScore = 0;
@@ -219,5 +221,17 @@ function fnRemoveStyleHeader() {
     element.classList.remove('clsHeader1');
     //document.getElementById('idPH3LetsPlay').style.color = 'white';
 }
+
+function fnHideDiv() {
+    //idQuestionPlusRoundSelectionDiv
+    document.getElementById("idQuestionPlusRoundSelectionDiv").style.display = "none";
+}
+
+function fnShowDiv() {
+    //idQuestionPlusRoundSelectionDiv
+    document.getElementById("idQuestionPlusRoundSelectionDiv").style.display = "grid";
+}
+
+
 
 

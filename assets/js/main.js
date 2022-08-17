@@ -13,7 +13,7 @@ console.log(cSelectedRoundsNumber);
 
 //https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/
 let fnSetSelectedRoundsNumber = () => {
-
+    document.getElementById('idH3LetsPlay').innerHTML = 'Let s play';
     for (const cSelectedRoundNumber of cSelectedRoundsNumber) {
         if (cSelectedRoundNumber.checked) {
             varSelectedRoundsNumber = cSelectedRoundNumber.value;
@@ -30,6 +30,9 @@ let fnSetSelectedRoundsNumber = () => {
 let fnCompareChoices = (choice) => {
 
     if (varSelectedRoundsNumber > 0) {
+
+        document.getElementById('idPOutput').innerHTML = '';
+
         varRoundNr = varRoundNr + 1;
 
         // Write the round number on the p element
@@ -50,6 +53,7 @@ let fnCompareChoices = (choice) => {
 
         // 1 | 5 | 9
         if (varRoundNr < varSelectedRoundsNumber) {
+
             if (varChoiceComp === varChoicePlayer) {
                 console.log('-------------------------------------------------------------------------------');
                 console.log('This round is draw because computer selected the same like player!');
@@ -58,85 +62,78 @@ let fnCompareChoices = (choice) => {
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
 
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML +=
-                    '<hr>'
-                    + '<p>' + 'This round is draw because computer selected the same like player!' + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+
+                    '<p>' + 'This round is draw because computer selected the same like player!' + '</p>'
                     + '<p>' + 'varChoiceComp = ' + varChoiceComp + ' varChoicePlayer = ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Please select a choice again! ' + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
-            }
-            // 2
-            else if ((varChoicePlayer === 'Scissors') && (varChoiceComp === 'Rock')) {
+            } else if ((varChoicePlayer === 'Scissors') && (varChoiceComp === 'Rock')) {
                 compScore = compScore + 1;
                 console.log('Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer);
                 console.log(varChoiceComp + ' beats ' + varChoicePlayer);
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
 
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoiceComp + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
 
-            }    // 4
-            else if ((varChoicePlayer === 'Rock') && (varChoiceComp === 'Scissors')) {
+            } else if ((varChoicePlayer === 'Rock') && (varChoiceComp === 'Scissors')) {
                 playerScore = playerScore + 1;
                 console.log('Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer);
                 console.log(varChoicePlayer + ' beats ' + varChoiceComp);
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
 
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoicePlayer + ' beats ' + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
 
-            } // 3
-            else if ((varChoicePlayer === 'Scissors') && (varChoiceComp === 'Paper')) {
+            } else if ((varChoicePlayer === 'Scissors') && (varChoiceComp === 'Paper')) {
                 playerScore = playerScore + 1;
                 console.log('Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer);
                 console.log(varChoicePlayer + ' beats ' + varChoiceComp);
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
 
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoicePlayer + ' beats ' + varChoiceComp + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
 
-            }    // 7
-            else if ((varChoicePlayer === 'Paper') && (varChoiceComp === 'Scissors')) {
+            } else if ((varChoicePlayer === 'Paper') && (varChoiceComp === 'Scissors')) {
                 compScore = compScore + 1;
                 console.log('Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer);
                 console.log(varChoiceComp + ' beats ' + varChoicePlayer);
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
 
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoiceComp + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
 
-            } // 6     
-            else if ((varChoicePlayer === 'Rock') && (varChoiceComp === 'Paper')) {
+            } else if ((varChoicePlayer === 'Rock') && (varChoiceComp === 'Paper')) {
                 compScore = compScore + 1;
                 console.log('Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer);
                 console.log(varChoiceComp + ' beats ' + varChoicePlayer);
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoiceComp + ' beats ' + varChoicePlayer + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
-            }    // 8
-            else if ((varChoicePlayer === 'Paper') && (varChoiceComp === 'Rock')) {
+            } else if ((varChoicePlayer === 'Paper') && (varChoiceComp === 'Rock')) {
                 playerScore = playerScore + 1;
                 console.log('Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer);
                 console.log(varChoicePlayer + ' beats ' + varChoiceComp);
                 console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer chose ' + varChoiceComp + ' | Player chose = ' + varChoicePlayer + '</p>'
                     + '<p>' + varChoicePlayer + ' beats ' + varChoiceComp + '</p>'
                     + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
             }
@@ -146,28 +143,28 @@ let fnCompareChoices = (choice) => {
 
         } else {
             console.log('Game is over!');
+            //  alert('Game is over! You can start again! ' + ' Player score :' + playerScore + ' Computer score: ' + compScore);
             if (compScore > playerScore) {
-                console.log('Computer won the game! ' + ' ----------> ' + 'Computer score: ' + compScore + ' Player score :' + playerScore);
+                console.log('Computer won the game! ' + ' Computer score : ' + compScore + ' Player score : ' + playerScore);
 
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer won the game! ' + ' ----------> ' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Computer won the game! ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
 
             } else if (compScore < playerScore) {
-                console.log('Player won the game! ' + ' ----------> ' + ' Player score :' + playerScore + 'Computer score: ' + compScore);
+                console.log('Player won the game! ' + ' Player score :' + playerScore + ' Computer score : ' + compScore);
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Player won the game! ' + ' ----------> ' + ' Player score :' + playerScore + 'Computer score: ' + compScore + '</p>';
-            } else {
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Player won the game! ' + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>';
+            } else if (compScore === playerScore) {
                 console.log('Game is a draw');
-                console.log('Computer score: ' + compScore + ' Player score :' + playerScore);
+                console.log('Computer score : ' + compScore + ' Player score :' + playerScore);
                 // Write the result in the p element 
-                document.getElementById('idPOutput').innerHTML += '<hr>'
-                    + '<p>' + 'Computer score: ' + compScore + ' Player score :' + playerScore + '</p>';
+                document.getElementById('idH3LetsPlay').innerHTML =
+                    '<p>' + 'Game is a draw ' + '</p>' + '<p>' + ' Computer score : ' + compScore + '</p>' + '<p>' + ' Player score : ' + playerScore + '</p>';
             }
 
 
-            alert('Game is over! You can start again! ');
             fnResetTheGame();
         }
 
@@ -193,6 +190,7 @@ function fnResetTheGame() {
     document.getElementById('idRoundNumber').innerHTML = '';
     document.getElementById('idPOutput').innerHTML = 'MAKE YOUR MOVE';
     document.getElementById('idRoundNumber').innerHTML = '';
+    document.getElementById('idSelectedRoundsNumber').innerHTML = '';
     console.clear();
 }
 

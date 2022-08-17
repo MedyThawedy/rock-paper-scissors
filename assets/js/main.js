@@ -211,7 +211,7 @@ function fnAddStyleHeader() {
     let element = document.getElementById('idH3LetsPlay');
     element.classList.add('clsHeader1');
     document.getElementById('idLetsPlay').style.width = "50%";
-    document.getElementById('idPH3LetsPlay').style.color = 'black';
+    //document.getElementById('idPH3LetsPlay').style.color = 'black';
 }
 
 function fnRemoveStyleHeader() {

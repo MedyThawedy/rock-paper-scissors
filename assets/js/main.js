@@ -12,7 +12,7 @@ const cSelectedRoundsNumber = document.querySelectorAll('input[name="rbSelectedR
 console.log(cSelectedRoundsNumber);
 
 //https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/
-function fnSetSelectedRoundsNumber() {
+let fnSetSelectedRoundsNumber = () => {
 
     for (const cSelectedRoundNumber of cSelectedRoundsNumber) {
         if (cSelectedRoundNumber.checked) {
@@ -27,7 +27,7 @@ function fnSetSelectedRoundsNumber() {
 // cSelectedRoundsNumber.addEventListener('click', fnSetSelectedRoundsNumber());
 
 //This function will handle the choice of the player and compare it with the choice of the computer and do the rest!
-function fnCompareChoices(choice) {
+let fnCompareChoices = (choice) => {
 
     if (varSelectedRoundsNumber > 0) {
         varRoundNr = varRoundNr + 1;
@@ -193,7 +193,7 @@ function fnResetTheGame() {
 }
 
 //https://www.w3schools.com/js/tryit.asp?filename=tryjs_random_0_9
-function fnComputerChoice() {
+let fnComputerChoice = () => {
     let arrChoices = ['Rock', 'Paper', 'Scissors'];
     varChoiceComp = arrChoices[Math.floor(Math.random() * 3)];
     console.log('Computer chose = ' + varChoiceComp);

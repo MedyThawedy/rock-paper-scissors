@@ -2,17 +2,17 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-    background-color: black;
-    color: #fff;
+    font-family: IBM Plex Mono, monospace;
+    background-color: #e5e5e5;
+    color: black;
 }
 
 .clsHeader1 {
     padding-top: 4vh;
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     color: black;
     -webkit-text-stroke: 1.5px #fff;
-    font-family: WorkSans, LarishNeue;
+    /* font-family: WorkSans, LarishNeue;*/
 }
 
 .clsRoundSelectionDiv {
@@ -38,13 +38,13 @@
     display: grid;
     grid-template-columns: 1fr;
     border: 1px solid #fff;
-    width: 13%;
+    width: 200px;
     margin-right: auto;
     margin-left: auto;
 }
 
 .clsHowManyRounds {
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif;*/
     font-weight: 400;
     margin-top: 1.5vh;
 }
@@ -52,8 +52,8 @@
 .clsChoice {
     border: 2px solid #fff;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     text-align: center;
     font-size: 1rem;
 
@@ -71,35 +71,34 @@ article>div:nth-child(11) {
 
 article {
     text-align: center;
-    background-color: black;
-    color: #fff;
+
 }
 
 .clsRoundNumber {
     margin-top: 2vh;
     border: 1px solid #fff;
-    width: 13%;
+    width: 200px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
     padding: 10px;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif;*/
     font-weight: 400;
 }
 
 .clsResults {
     margin-top: 2vh;
     border: 1px solid #fff;
-    width: 13%;
+    width: 200px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
     padding: 10px;
-    font-family: "Roboto", sans-serif;
+    /*font-family: "Roboto", sans-serif;*/
     font-weight: 400;
 }
 
@@ -110,7 +109,6 @@ article {
 
 .clsLetsPlay {
     margin-top: 2vh;
-    width: 25%;
     margin-left: auto;
     margin-right: auto;
     display: grid;
@@ -118,7 +116,7 @@ article {
     gap: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: "Roboto", sans-serif;
+    /*  font-family: "Roboto", sans-serif;*/
     font-weight: 400;
 
 }
@@ -127,7 +125,7 @@ article {
     display: flex;
     justify-content: center;
     margin-top: 3vh;
-    font-family: "Roboto", sans-serif;
+    /*   font-family: "Roboto", sans-serif;*/
     font-weight: 400;
 }
 
@@ -137,7 +135,7 @@ article {
 
 .clsRestart {
     padding: 14px 36px;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif;*/
     border: 1px solid #fff;
     font-size: 18px;
     font-weight: 400;
@@ -158,4 +156,5 @@ article {
 footer {
     text-align: center;
     margin-top: 3vh;
+    margin-bottom: 10vh;
 }

@@ -16,7 +16,7 @@ let fnSetSelectedRoundsNumber = () => {
     document.getElementById('idRoundNumber').innerHTML = '';
     varRoundNr = 0;
     document.getElementById('idSelectedRoundsNumber').innerHTML = '';
-    document.getElementById('idLetsPlay').style.width = "25%";
+    //document.getElementById('idLetsPlay').style.width = "25%";
     varSelectedRoundsNumber = 0;
     document.getElementById('idPlayerScore').innerHTML = '';
     playerScore = 0;

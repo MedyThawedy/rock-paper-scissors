@@ -10,12 +10,13 @@
 body{
     max-width: 500px;
     border: 1px solid #fff;
-    border-radius: 2px;
+    border-radius: 12px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3vh;
     margin-bottom: 3vh;
-    max-height: 742px;
+    /* max-height: 742px; */
+    padding: 3px;
 }
 
 .clsHeader1 {
@@ -172,5 +173,5 @@ article {
 footer {
     text-align: center;
     margin-top: 3vh;
-    margin-bottom: 10vh;
+    margin-bottom: 4vh;
 }
